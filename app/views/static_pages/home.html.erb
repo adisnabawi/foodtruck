@@ -1,0 +1,58 @@
+
+<div class="container">
+    <form role="form">
+      <label for="sel1">Select State:</label>
+      <select class="form-control" id="sel1">
+        <option>Kedah</option>
+        <option>Perlis</option>
+        <option>Perak</option>
+        <option>Selangor</option>
+      </select>
+      </form>
+
+
+<br>
+<div id="selectedState"></div>
+<script>
+$( "select" )
+  .change(function() {
+    var str = "";
+    $( "select option:selected" ).each(function() {
+      str = $( this ).text();
+      if(str == "Kedah")
+      {
+          str = '<div class="card card-block text-left"><h4 class="card-title">Kedah</h4><div class="card-body"><a href="http://4sq.com/1wNsElf" data-toggle="tooltip" title="Alor Star, Kedah, Malaysia">Good Guys Food Truck </a></div></div>'
+      }
+    });
+    document.getElementById("selectedState").innerHTML = str;
+  })
+  .trigger( "change" );
+</script>
+</div>
+ </div>
+
+<div id="complete-dialog" class="modal fade" tabindex="-1" style="display: none;" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">Frequently asked questions</h4>
+    </div>
+    <div class="modal-body">
+        <h5 style="font-weight:bold">Q1. Where to find food truck</h5>
+      <p>Food truck are all around you. Find using the apps and know where the food truck nearby your place</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+    </div>
+  </div>
+</div>
+</div>
+   
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
